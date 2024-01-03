@@ -1,4 +1,4 @@
-/** String processing exercise 1. */
+
 public class LowerCase {
     public static void main(String[] args) {  
         String str = args[0];
@@ -11,7 +11,22 @@ public class LowerCase {
     * Non-letter characters are left as is.
     */
     public static String lowerCase(String s) {
-        // Replace the following statement with your code
-        return null;
+    
+    String s_converted = "";
+    int length = s.length();
+    for (int i = 0; i < length; i++) 
+    {
+        char c = s_original.charAt(i);
+        if ((s.charAt(i) >= 'A') && (s.charAt(i) <= 'Z'))
+        {
+            c = (char)(c + 32);
+        }
+
+            s_converted = s_converted + c;
+        
+
     }
+        return s_converted;
+    
+}
 }
