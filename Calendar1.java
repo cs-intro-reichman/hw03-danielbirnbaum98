@@ -18,15 +18,23 @@ public class Calendar1 {
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
 	    int debugDaysCounter = 0; 
-	    //// Write the necessary initialization code, and replace the condition
-	    //// of the while loop with the necessary condition 
-	 	while (true) {
-	 		//// Write the body of the while 		
+	    
+	 	while (year < 2000) 
+	 	{ 		
 	 		advance();
+			if (dayOfWeek > 7)
+			{
+				dayOfWeek ++;
+			}
+			else
+			{
+				dayOfWeek = 1
+			}
 	 		debugDaysCounter++;
 	 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)
-	 		if (false) { 
+	 		if (false) 
+			{ 
 	 			break;
 	 		}
         }
@@ -41,17 +49,39 @@ public class Calendar1 {
 	 } 
 		 
     // Returns true if the given year is a leap year, false otherwise.
-	private static boolean isLeapYear(int year) {
-	    // Replace the following statement with your code
-		return false;
+	private static boolean isLeapYear(int year) 
+	{
+	    Boolean isLeapYear = false;
+	    if ((year % 400) == 0 || (((year % 4) == 0) && ((year % 100) != 0)))
+	    {
+	    	isLeapYear = true;
+	    }
+		return isLeapYear;
 	}
-	 
+		 
 	// Returns the number of days in the given month and year.
 	// April, June, September, and November have 30 days each.
 	// February has 28 days in a common year, and 29 days in a leap year.
 	// All the other months have 31 days.
-	private static int nDaysInMonth(int month, int year) {
-		// Replace the following statement with your code
-		return 0;
+	private static int nDaysInMonth(int month, int year) 
+	{
+		int numOfDays = 0; 
+		switch (month)
+		{
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			numOfDays = 31;
+			break;
+		case 4: case 6: case 9: case 11:
+			numOfDays = 30;
+			break;
+		default:
+			numOfDays = 28;
+			break;
+		}
+		if (numOfDays == 28 && (isLeapYear(year)))
+		{
+			numOfDays = 29;
+		}
+		return numOfDays;
 	}
 }
