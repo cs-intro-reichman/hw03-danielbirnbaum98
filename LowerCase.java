@@ -16,7 +16,7 @@ public class LowerCase {
     int length = s.length();
     for (int i = 0; i < length; i++) 
     {
-        char c = s_original.charAt(i);
+        char c = s.charAt(i);
         if ((s.charAt(i) >= 'A') && (s.charAt(i) <= 'Z'))
         {
             c = (char)(c + 32);
