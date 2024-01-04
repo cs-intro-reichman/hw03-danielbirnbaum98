@@ -17,14 +17,11 @@ public class UniqueChars {
         for (int i = 0; i < length; i++)
         {
             c = s.charAt(i);
-            if (s_unique.indexOf(c) == -1)
+            if ((s_unique.indexOf(c) == -1) || (c == ' '))
             {
                 s_unique = s_unique + c;
             }
-            if (c == ' ')
-            {
-                s_unique = s_unique + c;
-            }
+            
         }
             
             return s_unique;
